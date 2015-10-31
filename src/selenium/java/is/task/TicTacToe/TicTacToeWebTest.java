@@ -16,7 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class ChuckWebTest {
+public class TicTacToeWebTest {
 
     static WebDriver driver;
     static String baseUrl;
