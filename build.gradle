@@ -34,7 +34,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes("Main-Class": "is.ru.TicTacToe.TicTacToe")
+        attributes("Main-Class": "is.task.TicTacToe.TicTacToe")
     }
 }
-task stage { dependsOn installApp }
+task stage { dependsOn installDist }
