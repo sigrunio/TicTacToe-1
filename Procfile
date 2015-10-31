@@ -1,1 +1,1 @@
-web: build/install/TicTacToe/bin/TicTactoe
+web: build/install/TicTacToe/bin/TicTacToe
