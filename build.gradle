@@ -37,3 +37,4 @@ jar {
         attributes("Main-Class": "is.ru.TicTacToe.TicTacToe")
     }
 }
+task stage { dependsOn installApp }
