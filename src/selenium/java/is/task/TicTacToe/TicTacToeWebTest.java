@@ -24,7 +24,7 @@ public class TicTacToeWebTest {
 
   @Test
   public void test() throws Exception {
-    assertEquals("Hello World2", driver.findElement(By.cssSelector("body")).getText());
+    assertEquals("Hello World", driver.findElement(By.cssSelector("body")).getText());
   }
 
   @After
