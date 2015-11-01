@@ -69,10 +69,10 @@ set CMD_LINE_ARGS=%$
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\TicTacToe.jar;%APP_HOME%\lib\slf4j-api-1.7.12.jar
+set CLASSPATH=%APP_HOME%\lib\TicTacToe.jar;%APP_HOME%\lib\spark-core-2.3.jar;%APP_HOME%\lib\slf4j-simple-1.7.12.jar;%APP_HOME%\lib\jetty-server-9.3.2.v20150730.jar;%APP_HOME%\lib\jetty-webapp-9.3.2.v20150730.jar;%APP_HOME%\lib\websocket-server-9.3.2.v20150730.jar;%APP_HOME%\lib\websocket-servlet-9.3.2.v20150730.jar;%APP_HOME%\lib\javax.servlet-api-3.1.0.jar;%APP_HOME%\lib\jetty-http-9.3.2.v20150730.jar;%APP_HOME%\lib\jetty-io-9.3.2.v20150730.jar;%APP_HOME%\lib\jetty-xml-9.3.2.v20150730.jar;%APP_HOME%\lib\jetty-servlet-9.3.2.v20150730.jar;%APP_HOME%\lib\websocket-common-9.3.2.v20150730.jar;%APP_HOME%\lib\websocket-client-9.3.2.v20150730.jar;%APP_HOME%\lib\websocket-api-9.3.2.v20150730.jar;%APP_HOME%\lib\jetty-util-9.3.2.v20150730.jar;%APP_HOME%\lib\jetty-security-9.3.2.v20150730.jar;%APP_HOME%\lib\slf4j-api-1.7.12.jar
 
 @rem Execute TicTacToe
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TIC_TAC_TOE_OPTS%  -classpath "%CLASSPATH%" is.task.TicTacToe.TicTacToe %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TIC_TAC_TOE_OPTS%  -classpath "%CLASSPATH%" is.task.TicTacToe.TicTacToeWeb %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
