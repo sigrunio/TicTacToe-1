@@ -36,4 +36,28 @@ public class SquareTest {
 
         assertEquals(1, s.getSquareNumber());
     }
+
+    @Test
+    public void testSetMarked_IsMarkedIsTrue_returnTrue() {
+        Square s = new Square();
+        s.setMarked(true);
+
+        assertTrue(s.getMarked());
+    }
+
+    @Test
+    public void testSetCurrentSquareMark_CurrentSquareMarkIsX_returnX() {
+        Square s = new Square();
+        s.setCurrentSquareMark('X');
+
+        assertEquals('X', s.getCurrentSquareMark());
+    }
+
+    @Test
+    public void testSetCurrentSquareMark_CurrentSquareMarkIsO_returnO() {
+        Square s = new Square();
+        s.setCurrentSquareMark('O');
+
+        assertEquals('O', s.getCurrentSquareMark());
+    }
 }

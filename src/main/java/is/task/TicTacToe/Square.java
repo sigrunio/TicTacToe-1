@@ -32,11 +32,17 @@ public class Square {
         return this.isMarked;
     }
 
+    public void setMarked(boolean isMarked){
+        this.isMarked = isMarked;
+    }
+
     // The current marked symbol in the square
     public char getCurrentSquareMark(){
         return this.currentSquareMark;
     }
 
-
+    public void setCurrentSquareMark(char mark){
+        this.currentSquareMark = mark;
+    }
 
 }
