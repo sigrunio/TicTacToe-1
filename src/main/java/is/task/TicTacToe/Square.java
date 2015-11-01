@@ -27,4 +27,9 @@ public class Square {
     public boolean getMarked(){
         return this.isMarked;
     }
+
+    // The current marked symbol in the square
+    public char getCurrentSquareMark(){
+        return this.currentSquareMark;
+    }
 }

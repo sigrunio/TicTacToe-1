@@ -21,4 +21,11 @@ public class SquareTest {
 
         assertFalse(s.getMarked());
     }
+
+	@Test
+    public void testGetCurrentSquareMark_SquareEmpty_returnDash()  {
+        Square s = new Square();
+
+        assertEquals('-', s.getCurrentSquareMark());
+    }    
 }
