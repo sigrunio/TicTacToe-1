@@ -1,4 +1,4 @@
-package main.java.is.task.tictactoe;
+package main.java.is.task.TicTacToe;
 
 public class Square {
    
@@ -18,7 +18,13 @@ public class Square {
         this.isMarked = isMarked;
     }
     
+    //The Board field
     public int getSquareNumber() {
         return this.squareNumber;
+    }
+
+    // The marked status of a square
+    public boolean getMarked(){
+        return this.isMarked;
     }
 }
