@@ -23,6 +23,10 @@ public class Square {
         return this.squareNumber;
     }
 
+    public void setSquareNumber(int number){
+        this.squareNumber = number;
+    }
+
     // The marked status of a square
     public boolean getMarked(){
         return this.isMarked;
@@ -32,4 +36,7 @@ public class Square {
     public char getCurrentSquareMark(){
         return this.currentSquareMark;
     }
+
+
+
 }

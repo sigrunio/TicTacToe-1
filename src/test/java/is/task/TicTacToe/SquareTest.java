@@ -28,4 +28,12 @@ public class SquareTest {
 
         assertEquals('-', s.getCurrentSquareMark());
     }    
+
+    @Test
+    public void testSetSquareNumber_SquareNumberIsOne_returnOne() {
+        Square s = new Square();
+        s.setSquareNumber(1);
+
+        assertEquals(1, s.getSquareNumber());
+    }
 }
