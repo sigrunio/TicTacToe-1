@@ -11,4 +11,4 @@ deploy:
       secure: DLCMfvmdsTOhYpLkKSQLeUK4RQAXwh2DOO815Ml/pf4idG8sVJO9/HqUjqEEzLE9oxMp/2x7EdPfJ7MHuNp+uFitd/FgsEic5FCJqp+MYBVMaptVK/8bA4gbIV6gZRbZbCJbEikJvVCBmVveqf1EK+DKKhZD1QDIx/1Js0rKVPoiWno6Fua1f36Z95/jpcQIU+Q+elWQnnCIMGP2pUMgZ3UQH9F993LZBvfPcUUT7a/EmwvG0QJ8Id7VP+sm+ZK+RO2YLvmzV+LP9icR45KAVS8YpdMJSd/bKhKMjCRHmdDf/1nq2MGom+EIZqYobdUaoDWCwHW/o1/ges9xg756KjXSTaQEZHDTs0BOtsMwQHDHdfD8u89pz9G1BK6i0ZljN8R4x5JqW5gFlC1cM9cUhV2hox3DWEGAuOY/RGwAo/STARO9J4mGT/xy+xOOdAeKugQ4VJ891d5rS9fjNuIEdYHcfXzeoufNCQNiKFqYPXTptXZ/uTP6Tq3xcxdFIdzQUinp/jXeSMB3y0AbNHsN8EXauYkmv9PESa/wxpQdv5IKC3936t+rLip4sTfYDpyL03xKjDqLa0CL42sp//aAL1cO0+KURA6Orgw02493cxJnx+AldyDb1HmlCc8cAM8ewOJhhS7Lgo1aNDoq8te7ZJeTuJTmCVu2gwAnuBH8rXU=
   app: 
   	master: tasktictactoe
-  	production: webDevPandas
+  	production: webdevpandas
