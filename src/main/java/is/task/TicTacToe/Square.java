@@ -19,6 +19,6 @@ public class Square {
     }
     
     public int getSquareNumber() {
-        return 0;
+        return this.squareNumber;
     }
 }
