@@ -1,20 +1,16 @@
-#!/bin/bash
+#!/bin/bash -e
 
 #JAR="TicTacToe.jar"
-APP="TicTacToe.jar"
+APP="TicTacToe"
 
 # Always deploy new version, clean before
-~/TicTacToe/bin/clean
-~/TicTacToe/bin/package
-
-# If jar file exists under /tmp, remove it
-#test -f ~/TicTacToe/tmp/${JAR} && rm ~/TicTacToe/tmp/${JAR}
-#cp ~/TicTacToe/build/libs/${JAR} ~/TicTacToe/tmp
+/Users/Alexander/Developer/TicTacToe/bin/clean
+/Users/Alexander/Developer/TicTacToe/bin/package
 
 # If the installation folder exists under /tmp, remove it
-test -f ~/TicTacToe/tmp/${APP} && rm -r ~/TicTacToe/tmp/${APP}
-cp -r /~/TicTacToe/build/install/${APP} ~/TicTacToe/tmp
+test -f /Users/Alexander/Developer/TicTacToe/tmp/${APP} && rm -r /Users/Alexander/Developer/TicTacToe/tmp/${APP}
+cp -r /Users/Alexander/Developer/TicTacToe/build/install/${APP} /Users/Alexander/Developer/TicTacToe/tmp
 
 # Run application once
 #java -jar ~/TicTacToe/tmp/${JAR}
-~/TicTacToe/tmp/${APP}/bin/${APP}
+/Users/Alexander/Developer/TicTacToe/tmp/bin/${APP}
