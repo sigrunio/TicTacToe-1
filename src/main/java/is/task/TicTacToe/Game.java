@@ -55,6 +55,15 @@ public class Game {
                 (sq2.getCurrentSquareMark() == sq3.getCurrentSquareMark());
     }
 
+    // Checks all the columns on the board for winning strategy
+    public boolean checkColumnWin(){
+        for (int i = 0; i < 3; i++) {
+            if(checkSquares(gameBoard[0][i], gameBoard[1][i],gameBoard[2][i])){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }

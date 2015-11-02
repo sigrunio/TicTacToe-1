@@ -69,7 +69,6 @@ public class GameTest {
         assertFalse(g.checkRowWin());
     }
 
-
     @Test
     public void testCheckSquares_AllSquaresAreSame_ReturnTrue() {
         Game g = new Game();
@@ -94,5 +93,28 @@ public class GameTest {
         assertFalse(g.checkSquares(temp[0][0], temp[1][0], temp[2][0]));
     }
 
+        @Test
+    public void testCheckColwWin_AllSquaresAreOInCol1_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][0].setCurrentSquareMark('X');
+        temp[2][0].setCurrentSquareMark('X');
+
+        assertTrue(g.checkColumnWin());
+    }
+
+    @Test
+    public void testCheckColwWin_SquaresInCol1AreDifferent_ReturnFalse() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][0].setCurrentSquareMark('O');
+        temp[2][0].setCurrentSquareMark('X');
+
+        assertFalse(g.checkColumnWin());
+    }
 
 }
