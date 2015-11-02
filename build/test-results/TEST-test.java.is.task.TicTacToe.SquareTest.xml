@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.is.task.TicTacToe.SquareTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:18:36" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.003">
+<testsuite name="test.java.is.task.TicTacToe.SquareTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:23:42" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.006">
   <properties/>
   <testcase name="testSetMarked_IsMarkedIsTrue_returnTrue" classname="test.java.is.task.TicTacToe.SquareTest" time="0.0"/>
-  <testcase name="testGetSquareNumber_SquareEmpty_returnZero" classname="test.java.is.task.TicTacToe.SquareTest" time="0.001"/>
+  <testcase name="testGetSquareNumber_SquareEmpty_returnZero" classname="test.java.is.task.TicTacToe.SquareTest" time="0.0"/>
   <testcase name="testSetCurrentSquareMark_CurrentSquareMarkIsO_returnO" classname="test.java.is.task.TicTacToe.SquareTest" time="0.0"/>
   <testcase name="testSetSquareNumber_SquareNumberIsOne_returnOne" classname="test.java.is.task.TicTacToe.SquareTest" time="0.0"/>
   <testcase name="testSetCurrentSquareMark_CurrentSquareMarkIsX_returnX" classname="test.java.is.task.TicTacToe.SquareTest" time="0.0"/>

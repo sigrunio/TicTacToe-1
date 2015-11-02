@@ -84,4 +84,19 @@ public class TicTacToe{
 			}
 		}
 	}
+
+	// A main function to run our game
+	public static void main(String[] args){
+		TicTacToe ttt = new TicTacToe();
+		ttt.getGame().displayBoard();
+
+		System.out.println("Human plays as: " + ttt.getHuman().getPlayerMark());
+		System.out.println("Computer plays as: " + ttt.getComputer().getPlayerMark());
+
+		ttt.runGame();
+
+		System.out.println("The game ended! The score is:");
+		System.out.println("Human: " + ttt.getHuman().getScore()+ " - " +"Computer: " + ttt.getComputer().getScore());
+
+	}
 }
