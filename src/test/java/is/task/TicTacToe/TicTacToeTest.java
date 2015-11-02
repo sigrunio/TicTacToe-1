@@ -1,4 +1,4 @@
-package is.task.TicTacToe;
+package test.java.is.task.TicTacToe;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
