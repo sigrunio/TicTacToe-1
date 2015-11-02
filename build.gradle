@@ -22,6 +22,11 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+    selenium
+    seleniumXvfb
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
@@ -34,6 +39,12 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.12'
+
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
 }
 
 jar {
@@ -41,4 +52,54 @@ jar {
         attributes("Main-Class": "is.task.TicTacToe.TicTacToeWeb")
     }
 }
+
 task stage { dependsOn installDist }
+
+task selenium(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    ant.condition(property: "os", value: "windows") { os(family: "Windows") }
+    ant.condition(property: "os", value: "unix") { os(family: "unix") }
+
+    doFirst {
+        switch(ant.properties.os) {
+            case 'unix':
+                'build/install/TicTacToe/bin/TicTacToe &'.execute()
+                break
+            case 'windows':
+                'build\\install\\TicTacToe\\bin\\TicTacToe.bat'.execute()
+                break
+        }
+    }
+}
+
+task seleniumXvfb(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    environment "DISPLAY", ":99"
+
+    doFirst {
+        'bin/xvfb start'.execute()
+        'build/install/TicTacToe/bin/TicTacToe &'.execute()
+    }
+
+    doLast {
+        'sh -e /etc/init.d/xvfb stop'.execute()
+    }
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
