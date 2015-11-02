@@ -128,5 +128,17 @@ public class GameTest {
 
         assertTrue(g.checkDiagonalWin());
     }
-    
+
+    @Test
+    public void testCheckDiagonalwWin_SquaresAreDifferent_ReturnFalse() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][1].setCurrentSquareMark('O');
+        temp[2][2].setCurrentSquareMark('X');
+
+        assertFalse(g.checkDiagonalWin());
+    }
+
 }
