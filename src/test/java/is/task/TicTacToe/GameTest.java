@@ -215,6 +215,28 @@ public class GameTest {
         assertTrue(g.gameOver());
     }
 
+    @Test
+    public void testGameOver_CheckRowWinTrue_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
 
+        temp[0][0].setCurrentSquareMark('X');
+        temp[0][1].setCurrentSquareMark('X');
+        temp[0][2].setCurrentSquareMark('X');
+
+        assertTrue(g.gameOver());
+    }
+
+    @Test
+    public void testGameOver_CheckDiagonalWinTrue_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][1].setCurrentSquareMark('X');
+        temp[2][2].setCurrentSquareMark('X');
+
+        assertTrue(g.gameOver());
+    }
 
 }
