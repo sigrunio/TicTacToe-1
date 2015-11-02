@@ -70,5 +70,29 @@ public class GameTest {
     }
 
 
+    @Test
+    public void testCheckSquares_AllSquaresAreSame_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][0].setCurrentSquareMark('X');
+        temp[2][0].setCurrentSquareMark('X');
+
+        assertTrue(g.checkSquares(temp[0][0], temp[1][0], temp[2][0]));
+    }
+
+    @Test
+    public void testCheckSquares_SquaresAreDifferent_ReturnFalse() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][0].setCurrentSquareMark('O');
+        temp[2][0].setCurrentSquareMark('X');
+
+        assertFalse(g.checkSquares(temp[0][0], temp[1][0], temp[2][0]));
+    }
+
 
 }
