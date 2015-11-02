@@ -34,4 +34,20 @@ public class TicTacToeTest {
         assertEquals(ttt.getComputer().getClass(),cpu.getClass());
     }
 
+
+   @Test
+    public void testHumanPlayerSetter(){
+        TicTacToe ttt =  new TicTacToe();
+        HumanPlayer h = new HumanPlayer();
+        ttt.setHuman(h);
+        assertEquals(h, ttt.getHuman());
+    }
+
+    @Test
+    public void testHumanPlayerGetter(){
+        TicTacToe ttt =  new TicTacToe();
+      //  ttt.initializeTicTacToe();
+        HumanPlayer h =  new HumanPlayer();
+        assertEquals(ttt.getHuman().getClass(), h.getClass());
+    }
 }
