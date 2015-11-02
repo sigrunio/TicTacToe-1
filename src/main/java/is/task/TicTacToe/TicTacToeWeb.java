@@ -21,7 +21,7 @@ public class TicTacToeWeb implements SparkApplication {
 
     @Override
     public void init() {
-	   get("/hello", (req, res) -> "Hello World");
+	   get("/hello", (req, res) -> "Hello World2");
     }
 
 }
