@@ -23,6 +23,7 @@ public class TicTacToeWeb implements SparkApplication {
 
     @Override
     public void init() {
+        get("/hello", (req, res) -> "Hello World");
         final HumanPlayer humanPlayer = new HumanPlayer();
         final ComputerPlayer computerPlayer = new ComputerPlayer();
         post("/newgame", (req, res) -> {
