@@ -26,16 +26,19 @@ public class Game {
         }
     }
 
-    public void displayBoard(){
-        System.out.println("-------------");
+    public String displayBoard(){
+        String board = "";
+        board = strCat(board, "-------------");
         for (int i = 0;i < 3 ;i++ ) {
-            System.out.print("| ");
+            board = strCat(board, "| ");
             for (int j = 0;j < 3 ;j++) {
-                System.out.print(this.gameBoard[i][j].getCurrentSquareMark() + " | ");
+                board = strCat(board, this.gameBoard[i][j].getCurrentSquareMark() + " | ");
             }
-            System.out.println();
-            System.out.println("-------------");
+            board = strCat(board, "\n");
+            board = strCat(board, "-------------");
         }
+        System.out.print(board);
+        return board;
     }
 
     // Checks all the rows on the board for winning strategy
@@ -113,5 +116,9 @@ public class Game {
         return checkColumnWin() || checkRowWin() || checkDiagonalWin();
     }
 
-
+    private String strCat(String board, String addBoard){
+        //string cat function
+        board += addBoard;
+        return board;
+    }
 }

@@ -3,7 +3,7 @@ package main.java.is.task.TicTacToe;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;import java.lang.Integer;import java.lang.String;import java.lang.System;
-
+import java.io.ByteArrayInputStream;
 
 public class HumanPlayer extends Player{
 
@@ -11,8 +11,9 @@ public class HumanPlayer extends Player{
         super(0,'X');
     }
 
+    protected String move;
 
-    public int askMove(){
+   public int askMove(){
         // Instantiate a new reader to get input from user
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -23,7 +24,11 @@ public class HumanPlayer extends Player{
         String s = "";
         try
         {
+            String move = this.move;
+            ByteArrayInputStream in = new ByteArrayInputStream(move.getBytes());
+            System.setIn(in);
             s = br.readLine();
+            System.setIn(System.in);
 //            positionNumber = Integer.valueOf(s);
 
         }
@@ -36,7 +41,11 @@ public class HumanPlayer extends Player{
             System.out.println("Please enter a number from 1-9");
             try
             {
+                String move = this.move;
+                ByteArrayInputStream in = new ByteArrayInputStream(move.getBytes());
+                System.setIn(in);
                 s = br.readLine();
+                System.setIn(System.in);
 
             }
             catch (IOException e)
@@ -82,5 +91,8 @@ public class HumanPlayer extends Player{
 
         return position;
     }
+
+    public void setMove(String move) { this.move = move; }
+
 }
 
