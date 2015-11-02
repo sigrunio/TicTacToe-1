@@ -8,4 +8,5 @@ deploy:
   app: tasktictactoe
 script:
   - ./gradlew check
+  - ./gradlew jacocoTestReport
   - ./gradlew seleniumXvfb
