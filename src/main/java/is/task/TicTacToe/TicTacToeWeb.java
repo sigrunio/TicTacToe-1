@@ -28,7 +28,13 @@ public class TicTacToeWeb implements SparkApplication {
         post("/newgame", (req, res) -> {
             game = new Game();
             res.redirect("/");
+            res.status(200);
             return res;
+        });
+        get("/getboard", (req, res) -> {
+            StringBuilder html = new StringBuilder();
+            html.append("<pre>").append(game.displayBoard()).append("</pre>");
+            return html.toString();
         });
         post("/makemove", (req, res) -> {
 
@@ -40,7 +46,7 @@ public class TicTacToeWeb implements SparkApplication {
             }
 
             StringBuilder html = new StringBuilder();
-            html.append("<pre>").append(game.displayBoard()).append("</pre");
+            html.append("<pre>").append(game.displayBoard()).append("</pre>");
             return html.toString();
         });
 
