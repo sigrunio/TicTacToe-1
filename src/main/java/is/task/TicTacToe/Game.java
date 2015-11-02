@@ -28,14 +28,14 @@ public class Game {
 
     public String displayBoard(){
         String board = "";
-        board = strCat(board, "-------------<\\br>");
+        board = strCat(board, "-------------</br>");
         for (int i = 0;i < 3 ;i++ ) {
             board = strCat(board, "| ");
             for (int j = 0;j < 3 ;j++) {
                 board = strCat(board, this.gameBoard[i][j].getCurrentSquareMark() + " | ");
             }
-            board = strCat(board, "<\\br>");
-            board = strCat(board, "-------------<\\br>");
+            board = strCat(board, "</br>");
+            board = strCat(board, "-------------</br>");
         }
         System.out.print(board);
         return board;
