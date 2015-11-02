@@ -41,14 +41,19 @@ public class Game {
     // Checks all the rows on the board for winning strategy
     public boolean checkRowWin(){
         for (int i = 0; i < 3; i++){
-            if ((gameBoard[i][0].getCurrentSquareMark() == gameBoard[i][1].getCurrentSquareMark()) && 
-            	(gameBoard[i][1].getCurrentSquareMark() == gameBoard[i][2].getCurrentSquareMark())) {
+            if (checkSquares(gameBoard[i][0],gameBoard[i][1],gameBoard[i][2])){
                 return true;
             }
         }
         return false;
     }
 
+        // A function which returns true if three squares are the same
+    public boolean checkSquares(Square sq1, Square sq2, Square sq3){
+        return (sq1.getCurrentSquareMark() != '-')  &&
+                (sq1.getCurrentSquareMark() == sq2.getCurrentSquareMark()) &&
+                (sq2.getCurrentSquareMark() == sq3.getCurrentSquareMark());
+    }
 
 
 

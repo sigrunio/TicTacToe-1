@@ -57,7 +57,17 @@ public class GameTest {
         assertTrue(g.checkRowWin());
     }
 
+    @Test
+    public void testCheckRowWin_SquaresInRow1AreDifferent_ReturnFalse() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
 
+        temp[0][0].setCurrentSquareMark('X');
+        temp[0][1].setCurrentSquareMark('O');
+        temp[0][2].setCurrentSquareMark('X');
+
+        assertFalse(g.checkRowWin());
+    }
 
 
 
