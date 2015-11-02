@@ -38,14 +38,15 @@ public class TicTacToeWeb implements SparkApplication {
             String inputMove = String.valueOf(req.queryParams("move"));
 
             if(!game.getGame().gameOver()){
-                game.getHuman().setMove(inputMove);
-                game.getHuman().askMove();
+                game.getHuman().makeMove(game.getGame(), inputMove);
             }
 
-            StringBuilder html = new StringBuilder();
+            res.status(200);
+            return "";
+            /*StringBuilder html = new StringBuilder();
             html.append("<pre>").append(game.getGame().displayBoard()).append("</pre>");
             res.status(200);
-            return html.toString();
+            return html.toString();*/
         });
     }
 }

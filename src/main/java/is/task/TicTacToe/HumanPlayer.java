@@ -3,7 +3,7 @@ package main.java.is.task.TicTacToe;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;import java.lang.Integer;import java.lang.String;import java.lang.System;
-import java.io.ByteArrayInputStream;
+
 
 public class HumanPlayer extends Player{
 
@@ -11,45 +11,6 @@ public class HumanPlayer extends Player{
         super(0,'X');
     }
 
-    protected String move;
-
-   public int askMove(){
-        // Instantiate a new reader to get input from user
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        System.out.println("Please enter a number from 1-9");
-        // Try to get the next move from user input
-        int positionNumber = 0;
-
-        String s = "";
-        try
-        {
-            s = br.readLine();
-//            positionNumber = Integer.valueOf(s);
-
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        while(!checkLegalInput(s)){
-            System.out.println("Please enter a number from 1-9");
-            try
-            {
-                s = br.readLine();
-
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-
-        positionNumber = Integer.valueOf(s);
-        return positionNumber;
-
-    }
 
     public boolean checkLegalInput(String s){
         int inputNumber = 0;
@@ -73,18 +34,11 @@ public class HumanPlayer extends Player{
         return !((number < 1) || (number > 9));
     }
 
-    public int makeMove()
+    public boolean makeMove(Game g, String s)
     {
-        int position;
-        position = askMove();
-        if (position == 0){
-            makeMove();
-        }
+        // check if field is taken
+        int position = Integer.parseInt(s);
+        return g.mapInputToSquare(position,this.getPlayerMark());
 
-        return position;
     }
-
-    public void setMove(String move) { this.move = move; }
-
 }
-
