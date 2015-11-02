@@ -26,9 +26,10 @@ public class TicTacToeWeb implements SparkApplication {
         final HumanPlayer humanPlayer = new HumanPlayer();
         final ComputerPlayer computerPlayer = new ComputerPlayer();
 
-        get("/hello", (req, res) -> "Hello World");
-
         get("/getboard", (req, res) -> "party");
+        get("/hello", (req, res) -> game.displayBoard());
+
+
         post("/newgame", (req, res) -> {
             game = new Game();
             res.redirect("/");
