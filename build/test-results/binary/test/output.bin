@@ -1,18 +1,17 @@
-Please enter a number from 1-9
-Please enter a NUMBER
-	Please enter a NUMBER
-
-1The number you entered was not int the range 1-9
-Please enter a NUMBER
-This field is taken
-This field is taken
-This field is taken
-X
-O
-X
-O
-X
-O
-X
-O
-X
+Please enter a number from 1-9
+Please enter a NUMBER
+Please enter a NUMBER
+1The number you entered was not int the range 1-9
+	Please enter a NUMBER
+This field is taken
+This field is taken
+This field is taken
+X
+O
+X
+O
+X
+O
+X
+O
+X

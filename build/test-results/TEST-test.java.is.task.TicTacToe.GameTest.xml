@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.is.task.TicTacToe.GameTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:02:06" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.024">
+<testsuite name="test.java.is.task.TicTacToe.GameTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:15:34" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.018">
   <properties/>
-  <testcase name="testCheckSquares_AllSquaresAreSame_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.003"/>
+  <testcase name="testCheckSquares_AllSquaresAreSame_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
   <testcase name="testGameOver_CheckColWinTrue_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
-  <testcase name="testCheckForTie_SomeFieldsAreMarked_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
+  <testcase name="testCheckForTie_SomeFieldsAreMarked_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
   <testcase name="testGameOver_CheckDiagonalWinTrue_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
   <testcase name="testCheckRowWin_SquaresInRow1AreDifferent_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
   <testcase name="testGameInitializeBoard" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
-  <testcase name="testCheckForTie_AllFieldsAreMarked_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
+  <testcase name="testCheckForTie_AllFieldsAreMarked_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
   <testcase name="testCheckRowWin_AllSquaresAreXInRow1_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
   <testcase name="testCheckColwWin_SquaresInCol1AreDifferent_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
-  <testcase name="testGameOver_CheckRowWinTrue_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
+  <testcase name="testGameOver_CheckRowWinTrue_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.003"/>
   <testcase name="testGameOver_NoWin_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
-  <testcase name="testCheckDiagonalwWin_AllSquaresAreX_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
+  <testcase name="testCheckDiagonalwWin_AllSquaresAreX_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
   <testcase name="testMapInputToSquare_BoardPosTaken_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
-  <testcase name="testCheckSquares_SquaresAreDifferent_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
-  <testcase name="testMapInputToSquare_BoardIsEmpty_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.015"/>
-  <testcase name="testCheckColwWin_AllSquaresAreOInCol1_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
+  <testcase name="testCheckSquares_SquaresAreDifferent_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
+  <testcase name="testMapInputToSquare_BoardIsEmpty_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.002"/>
+  <testcase name="testCheckColwWin_AllSquaresAreOInCol1_ReturnTrue" classname="test.java.is.task.TicTacToe.GameTest" time="0.001"/>
   <testcase name="testCheckDiagonalwWin_SquaresAreDifferent_ReturnFalse" classname="test.java.is.task.TicTacToe.GameTest" time="0.0"/>
   <system-out><![CDATA[This field is taken
 This field is taken

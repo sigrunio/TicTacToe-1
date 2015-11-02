@@ -7,6 +7,15 @@ public class TicTacToe{
     // our players human and computer
     protected HumanPlayer human;
     protected ComputerPlayer computer;
+    
+
+	public TicTacToe() {
+        // instantiate a game
+        this.game = new Game();
+        this.human = new HumanPlayer();
+        this.computer = new ComputerPlayer();
+
+    }
 
     // Getters and setters
     public ComputerPlayer getComputer() {
@@ -16,4 +25,22 @@ public class TicTacToe{
     public void setComputer(ComputerPlayer computer) {
         this.computer = computer;
     }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+
+    public HumanPlayer getHuman() {
+        return human;
+    }
+
+    public void setHuman(HumanPlayer human) {
+        this.human = human;
+    }
+
 }

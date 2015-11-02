@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.is.task.TicTacToe.ComputerPlayerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:02:06" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.001">
+<testsuite name="test.java.is.task.TicTacToe.ComputerPlayerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:15:34" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.001">
   <properties/>
   <testcase name="testIfMoveIsInRange" classname="test.java.is.task.TicTacToe.ComputerPlayerTest" time="0.0"/>
   <testcase name="testZeroScoreAtStart" classname="test.java.is.task.TicTacToe.ComputerPlayerTest" time="0.001"/>
