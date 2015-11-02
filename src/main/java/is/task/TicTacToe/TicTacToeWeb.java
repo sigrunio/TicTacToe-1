@@ -21,27 +21,33 @@ public class TicTacToeWeb implements SparkApplication {
         tictactoeweb.init();
     }
 
-    @Override
+    //@Override
     public void init() {
-
         final HumanPlayer humanPlayer = new HumanPlayer();
         final ComputerPlayer computerPlayer = new ComputerPlayer();
         get("/hello", (req, res) -> "Hello World");
-        get("/getboard", (req, res) -> game.displayBoard());
-            post("/newgame", (req, res) -> {
-                game = new Game();
-                res.redirect("/");
-                res.status(200);
-                return "";
-            });
-       /* get("/getboard", (req, res) -> {
+        get(new Route("/getboard"){
+            @Override
+            public Object handle(Request req, Response res){
+
+                return game.displayBoard();
+            }
+        });
+       /*  get("/getboard", (req, res) -> game.displayBoard());
+        post("/newgame", (req, res) -> {
+            game = new Game();
+            res.redirect("/");
+            res.status(200);
+            return "";
+        });
+       get("/getboard", (req, res) -> {
             StringBuilder html = new StringBuilder();
             html.append("<pre>").append(game.displayBoard()).append("</pre>");
             res.status(200);
             //return html.toString();
             return game.displayBoard();
 
-        });*/
+        });
         post("/makemove", (req, res) -> {
 
             String inputMove = String.valueOf(req.queryParams("move"));
@@ -56,6 +62,6 @@ public class TicTacToeWeb implements SparkApplication {
             res.status(200);
             return html.toString();
         });
-
+*/
     }
 }
