@@ -40,7 +40,13 @@ public class Game {
 
     // Checks all the rows on the board for winning strategy
     public boolean checkRowWin(){
-        return true;
+        for (int i = 0; i < 3; i++){
+            if ((gameBoard[i][0].getCurrentSquareMark() == gameBoard[i][1].getCurrentSquareMark()) && 
+            	(gameBoard[i][1].getCurrentSquareMark() == gameBoard[i][2].getCurrentSquareMark())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
