@@ -141,4 +141,21 @@ public class GameTest {
         assertFalse(g.checkDiagonalWin());
     }
 
+    @Test
+    public void testCheckForTie_AllFieldsAreMarked_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setMarked(true);
+        temp[0][1].setMarked(true);
+        temp[0][2].setMarked(true);
+        temp[1][0].setMarked(true);
+        temp[1][1].setMarked(true);
+        temp[1][2].setMarked(true);
+        temp[2][0].setMarked(true);
+        temp[2][1].setMarked(true);
+        temp[2][2].setMarked(true);
+
+        assertTrue(g.checkForTie());
+    }
 }

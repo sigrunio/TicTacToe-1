@@ -71,5 +71,16 @@ public class Game {
         (checkSquares(gameBoard[0][2], gameBoard[1][1],gameBoard[2][0]) == true);
     }
 
+    public boolean checkForTie(){
+        // If all the fields are marked then there was a tie
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (!gameBoard[i][j].getMarked()){
+                    return false;
+                }
 
+            }
+        }
+        return true;
+    }
 }
