@@ -24,11 +24,7 @@ public class HumanPlayer extends Player{
         String s = "";
         try
         {
-            String move = this.move;
-            ByteArrayInputStream in = new ByteArrayInputStream(move.getBytes());
-            System.setIn(in);
             s = br.readLine();
-            System.setIn(System.in);
 //            positionNumber = Integer.valueOf(s);
 
         }
@@ -41,11 +37,7 @@ public class HumanPlayer extends Player{
             System.out.println("Please enter a number from 1-9");
             try
             {
-                String move = this.move;
-                ByteArrayInputStream in = new ByteArrayInputStream(move.getBytes());
-                System.setIn(in);
                 s = br.readLine();
-                System.setIn(System.in);
 
             }
             catch (IOException e)
