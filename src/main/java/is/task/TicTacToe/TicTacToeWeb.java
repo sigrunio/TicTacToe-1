@@ -40,8 +40,8 @@ public class TicTacToeWeb implements SparkApplication {
             res.status(200);
             //return html.toString();
             return game.displayBoard();
-        */
-        });
+
+        });*/
         post("/makemove", (req, res) -> {
 
             String inputMove = String.valueOf(req.queryParams("move"));
