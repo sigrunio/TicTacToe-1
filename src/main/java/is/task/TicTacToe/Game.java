@@ -111,7 +111,6 @@ public class Game {
 
     public boolean gameOver(){
         return checkColumnWin() || checkRowWin() || checkDiagonalWin();
-
     }
 
 

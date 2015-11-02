@@ -239,4 +239,11 @@ public class GameTest {
         assertTrue(g.gameOver());
     }
 
+    @Test
+    public void testGameOver_NoWin_ReturnFalse() {
+        Game g = new Game();
+
+        assertFalse(g.gameOver());
+    }
+
 }
