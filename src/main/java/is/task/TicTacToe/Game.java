@@ -65,5 +65,11 @@ public class Game {
         return false;
     }
 
+    // Cheks both the diagonals for a winning strategy
+    public boolean checkDiagonalWin(){
+        return (checkSquares(gameBoard[0][0],gameBoard[1][1], gameBoard[2][2]) == true) || 
+        (checkSquares(gameBoard[0][2], gameBoard[1][1],gameBoard[2][0]) == true);
+    }
+
 
 }
