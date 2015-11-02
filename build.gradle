@@ -15,7 +15,6 @@ apply plugin: 'jacoco'
 mainClassName = "is.task.TicTacToe.TicTacToeWeb"
 
 
-// In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
