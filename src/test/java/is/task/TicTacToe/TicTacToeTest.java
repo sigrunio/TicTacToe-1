@@ -50,4 +50,24 @@ public class TicTacToeTest {
         HumanPlayer h =  new HumanPlayer();
         assertEquals(ttt.getHuman().getClass(), h.getClass());
     }
+
+
+    @Test
+    public void testGameSetter(){
+        TicTacToe ttt =  new TicTacToe();
+        Game g = new Game();
+        ttt.setGame(g);
+        assertEquals(g, ttt.getGame());
+
+    }
+
+    
+    @Test
+    public void testGameGetter(){
+        TicTacToe ttt =  new TicTacToe();
+     //   ttt.initializeTicTacToe();
+        Game g =  new Game();
+        assertEquals(ttt.getGame().getClass(), g.getClass());
+
+    }
 }

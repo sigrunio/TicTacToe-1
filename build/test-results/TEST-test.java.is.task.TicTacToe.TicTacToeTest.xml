@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.is.task.TicTacToe.TicTacToeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:17:10" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.007">
+<testsuite name="test.java.is.task.TicTacToe.TicTacToeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:18:36" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.009">
   <properties/>
-  <testcase name="testHumanPlayerGetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.004"/>
-  <testcase name="testHumanPlayerSetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.0"/>
-  <testcase name="testComputerPlayerGetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.001"/>
+  <testcase name="testHumanPlayerGetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.005"/>
+  <testcase name="testHumanPlayerSetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.001"/>
+  <testcase name="testGameGetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.001"/>
+  <testcase name="testGameSetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.0"/>
+  <testcase name="testComputerPlayerGetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testComputerPlayerSetter" classname="test.java.is.task.TicTacToe.TicTacToeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
