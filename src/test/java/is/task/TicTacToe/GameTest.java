@@ -173,4 +173,22 @@ public class GameTest {
 
         assertFalse(g.checkForTie());
     }
+
+    @Test
+    public void testMapInputToSquare_BoardIsEmpty_ReturnTrue() {
+        Game g = new Game();
+
+        assertTrue(g.mapInputToSquare(1, 'X'));
+        assertTrue(g.mapInputToSquare(2, 'O'));
+        assertTrue(g.mapInputToSquare(3, 'X'));
+        assertTrue(g.mapInputToSquare(4, 'O'));
+        assertTrue(g.mapInputToSquare(5, 'X'));
+        assertTrue(g.mapInputToSquare(6, 'O'));
+        assertTrue(g.mapInputToSquare(7, 'X'));
+        assertTrue(g.mapInputToSquare(8, 'O'));
+        assertTrue(g.mapInputToSquare(9, 'X'));
+    }
+
+
+
 }

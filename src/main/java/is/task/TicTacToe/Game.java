@@ -83,4 +83,32 @@ public class Game {
         }
         return true;
     }
+
+    // map the input
+    public boolean mapInputToSquare(int squarePosition, char playerMark){
+        // loop through the squares and check each squares position
+        // if the square is free we mark it if not we ask the user again for input
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3 ; j++) {
+                // if this is the square we want to mark check if it's free
+                if(gameBoard[i][j].getSquareNumber() == squarePosition){
+                    if(gameBoard[i][j].isMarked){
+                  
+                        System.out.println("This field is taken");
+                        return false;
+                    } // if it isn't marked we can mark it with our player and return true
+                    else{
+                        gameBoard[i][j].setCurrentSquareMark(playerMark);
+                        System.out.println(gameBoard[i][j].getCurrentSquareMark());
+                        gameBoard[i][j].setMarked(true);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+
+
 }
