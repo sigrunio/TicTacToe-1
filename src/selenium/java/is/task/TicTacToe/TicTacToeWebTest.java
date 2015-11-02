@@ -22,11 +22,6 @@ public class TicTacToeWebTest {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  @Test
-  public void test() throws Exception {
-    assertEquals("Hello World", driver.findElement(By.cssSelector("body")).getText());
-  }
-
   @After
   public void tearDown() throws Exception {
     driver.quit();
