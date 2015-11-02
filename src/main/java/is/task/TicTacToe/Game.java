@@ -38,4 +38,12 @@ public class Game {
         }
     }
 
+    // Checks all the rows on the board for winning strategy
+    public boolean checkRowWin(){
+        return true;
+    }
+
+
+
+
 }

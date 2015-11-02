@@ -45,5 +45,20 @@ public class GameTest {
         assertFalse(temp[2][2].getMarked());
     }
 
+    @Test
+    public void testCheckRowWin_AllSquaresAreXInRow1_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[0][1].setCurrentSquareMark('X');
+        temp[0][2].setCurrentSquareMark('X');
+
+        assertTrue(g.checkRowWin());
+    }
+
+
+
+
     
 }
