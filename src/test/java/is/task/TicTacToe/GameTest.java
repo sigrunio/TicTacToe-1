@@ -1,8 +1,7 @@
-package test.java.is.task.tictactoe;
+package test.java.is.task.TicTacToe;
 
-import com.sun.source.tree.AssertTree;
-import main.java.is.task.tictactoe.Game;
-import main.java.is.task.tictactoe.Square;
+import main.java.is.task.TicTacToe.Game;
+import main.java.is.task.TicTacToe.Square;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

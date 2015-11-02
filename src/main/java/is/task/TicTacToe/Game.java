@@ -1,4 +1,4 @@
-package main.java.is.task.tictactoe;
+package main.java.is.task.TicTacToe;
 
 import java.lang.System; 
 
