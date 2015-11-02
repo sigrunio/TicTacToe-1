@@ -158,4 +158,19 @@ public class GameTest {
 
         assertTrue(g.checkForTie());
     }
+
+    @Test
+    public void testCheckForTie_SomeFieldsAreMarked_ReturnFalse() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setMarked(true);
+        temp[0][1].setMarked(true);
+        temp[1][0].setMarked(true);
+        temp[1][1].setMarked(true);
+        temp[2][1].setMarked(true);
+        temp[2][2].setMarked(true);
+
+        assertFalse(g.checkForTie());
+    }
 }
