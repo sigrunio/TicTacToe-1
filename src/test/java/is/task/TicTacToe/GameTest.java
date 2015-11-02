@@ -203,4 +203,18 @@ public class GameTest {
         assertFalse(g.mapInputToSquare(9, 'X'));
     }
 
+    @Test
+    public void testGameOver_CheckColWinTrue_ReturnTrue() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
+
+        temp[0][0].setCurrentSquareMark('X');
+        temp[1][0].setCurrentSquareMark('X');
+        temp[2][0].setCurrentSquareMark('X');
+
+        assertTrue(g.gameOver());
+    }
+
+
+
 }

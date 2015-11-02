@@ -109,6 +109,10 @@ public class Game {
         return false;
     }
 
+    public boolean gameOver(){
+        return checkColumnWin() || checkRowWin() || checkDiagonalWin();
+
+    }
 
 
 }
