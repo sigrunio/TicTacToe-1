@@ -189,6 +189,18 @@ public class GameTest {
         assertTrue(g.mapInputToSquare(9, 'X'));
     }
 
+    @Test
+    public void testMapInputToSquare_BoardPosTaken_ReturnFalse() {
+        Game g = new Game();
+        Square[][] temp  = g.getGameBoard();
 
+        temp[0][0].setMarked(true);
+        temp[1][1].setMarked(true);
+        temp[2][2].setMarked(true);
+
+        assertFalse(g.mapInputToSquare(1, 'X'));
+        assertFalse(g.mapInputToSquare(5, 'X'));
+        assertFalse(g.mapInputToSquare(9, 'X'));
+    }
 
 }
