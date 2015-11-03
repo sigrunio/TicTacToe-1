@@ -34,15 +34,17 @@
 
         <div class="cover-container">
 
-
           <div class="inner cover">
             <h1 class="cover-heading">TicTacToe</h1>
-            <p method="get" action="/getboard" class="lead">asdf</p>
+            <p id="board" class="lead">asdf</p>
 
               <form method="post" action="/makemove" class="form-inline" role="form">
-                  <input type="text" name="number" id="number"/>
+                  <input type="text" name="move" id="move"/>
                   <button type="submit" class="btn btn-lg btn-default">Make Move</button>
               </form>
+
+              <div id="results" class="alert alert-info"></div>
+
             <p class="lead">
               <form method="post" action="/newgame" class="form-inline" role="form">
                     <button type="submit" class="btn btn-lg btn-default">New Game</button>
@@ -50,13 +52,37 @@
             </p>
           </div>
 
-
         </div>
 
       </div>
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Use ajax to submit form, retrive joke and display on page -->
+    <script>
+        $(document).ready(function() {
+            var form = $('form');
+            form.submit(function( event ) {
+                var move =$("#move").val();
+                $("#move").val("");
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: 'move=' + move
+                }).done(function(result) {
+                    $('#results').html(result).attr('class', 'alert alert-success');
+                }).fail(function() {
+                    $('#results').html('Error, no one wins?').attr('class', 'alert alert-danger');
+                });
+                event.preventDefault();
+            });
+            $.get("getboard", function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
