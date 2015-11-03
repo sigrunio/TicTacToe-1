@@ -39,7 +39,7 @@
             <p id="board" class="lead"></p>
               <p id="results" class="lead"></p>
 
-              <form method="post" action="/makemove" role="form">
+              <form method="post" action="/makemove" role="form" id="makemove">
                   <p><input type="text" name="move" id="move"/></p><br>
                   <p><button type="submit" class="btn btn-lg btn-default">Make Move</button></p>
               </form>
@@ -62,7 +62,7 @@
     <!-- Use ajax to submit form, retrive joke and display on page -->
     <script>
         $(document).ready(function() {
-            var form = $('form');
+            var form = $('#makemove');
             form.submit(function( event ) {
                 var move =$("#move").val();
                 $("#move").val("");
