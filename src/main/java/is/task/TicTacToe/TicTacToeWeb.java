@@ -7,7 +7,7 @@ import spark.servlet.SparkApplication;
 
 public class TicTacToeWeb implements SparkApplication {
 
-    private Game game = new Game();
+    private TicTacToe game = new TicTacToe();
 
     public static void main(String[] args) {
         staticFileLocation("/public");
@@ -23,41 +23,65 @@ public class TicTacToeWeb implements SparkApplication {
 
     @Override
     public void init() {
-        final HumanPlayer humanPlayer = new HumanPlayer();
-        final ComputerPlayer computerPlayer = new ComputerPlayer();
 
-        get("/getboard", (req, res) -> "party");
-        get("/hello", (req, res) -> game.displayBoard());
+        get("/getboard", (req, res) -> game.getGame().displayBoard());
 
 
-        /*post("/newgame", (req, res) -> {
-            game = new Game();
+        post("/newgame", (req, res) -> {
+            game = new TicTacToe();
             res.redirect("/");
             res.status(200);
             return "";
-        });
-        get("/getboard", (req, res) -> {
-            StringBuilder html = new StringBuilder();
-            html.append("<pre>").append(game.displayBoard()).append("</pre>");
-            res.status(200);
-            //return html.toString();
-            return game.displayBoard();
-
         });
         post("/makemove", (req, res) -> {
 
             String inputMove = String.valueOf(req.queryParams("move"));
 
-            if(!game.gameOver()){
-                humanPlayer.setMove(inputMove);
-                humanPlayer.askMove();
+            if(!game.getHuman().checkLegalInput(inputMove)) {
+                return "Illegal input!";
             }
 
-            StringBuilder html = new StringBuilder();
-            html.append("<pre>").append(game.displayBoard()).append("</pre>");
+            if(!game.getGame().gameOver()){
+                if(!game.getHuman().makeMove(game.getGame(), inputMove)) {
+                    return "Square Occupied!";
+                }
+                //game.getGame().mapInputToSquare(game.getComputer().makeMove(), game.getComputer().getPlayerMark());
+            }
+
+            if(game.getGame().gameOver()) {
+                if (game.getGame().checkForTie()) {
+                    return "It's a Tie.";
+                }
+                else {
+                    return "YOU WIN!";
+                }
+            }
+
+            if(!game.getGame().gameOver()) {
+                int compPos = game.getComputer().makeMove();
+                while (true) {
+                    if (game.getGame().mapInputToSquare(compPos, game.getComputer().getPlayerMark())) {
+                        break;
+                    } else {
+                        compPos = game.getComputer().makeMove();
+                    }
+                }
+            }
+
+            if(game.getGame().gameOver()) {
+                if (game.getGame().checkForTie()) {
+                    return "It's a Tie";
+                }
+                else {
+                    return "Computer wins!";
+                }
+            }
             res.status(200);
-            return html.toString();
+            return "";
+            /*StringBuilder html = new StringBuilder();
+            html.append("<pre>").append(game.getGame().displayBoard()).append("</pre>");
+            res.status(200);
+            return html.toString();*/
         });
-	*/
     }
 }

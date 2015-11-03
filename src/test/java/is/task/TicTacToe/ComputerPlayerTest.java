@@ -16,7 +16,7 @@ public class ComputerPlayerTest {
     @Test
     public void testPlayerMark(){
         ComputerPlayer c = new ComputerPlayer();
-        assertEquals('O', c.getPlayerMark());
+        assertEquals("O", c.getPlayerMark());
     }
 
     // Test if human player's score is zero at initialization

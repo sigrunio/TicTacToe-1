@@ -18,7 +18,7 @@ public class HumanPlayerTest {
     public void testPlayerMark(){
 
         HumanPlayer h = new HumanPlayer();
-        assertEquals('X', h.getPlayerMark());
+        assertEquals("X", h.getPlayerMark());
     }
 
     // Test if human player's score is zero at initialization
@@ -64,27 +64,6 @@ public class HumanPlayerTest {
         HumanPlayer h = new HumanPlayer();
         assertEquals(false, h.checkLegalInput("23"));
     }
-
-
-    // Test if askMove returns an integer
-    @Test
-    public void askMoveReturnType(){
-        ByteArrayInputStream in = new ByteArrayInputStream("4".getBytes());
-        System.setIn(in);
-        HumanPlayer h = new HumanPlayer();
-        assertEquals(4, h.askMove());
-        System.setIn(System.in);
-    }
-
-
-    // Test if makeMove returns a legal integer
-
-
-
-
-
-
-
 
 
 
