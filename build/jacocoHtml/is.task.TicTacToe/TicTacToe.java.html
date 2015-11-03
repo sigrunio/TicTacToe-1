@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TicTacToe.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">is.task.TicTacToe</a> &gt; <span class="el_source">TicTacToe.java</span></div><h1>TicTacToe.java</h1><pre class="source lang-java linenums">package main.java.is.task.TicTacToe;
+
+<span class="nc" id="L3">import java.io.BufferedReader;</span>
+import java.io.IOException;
+<span class="nc" id="L5">import java.io.InputStreamReader;</span>
+<span class="nc" id="L6"></span>
+<span class="nc" id="L7">public class TicTacToe{</span>
+
+	// our Game to be run
+	protected Game game;
+	// our players human and computer
+	protected HumanPlayer human;
+	protected ComputerPlayer computer;
+	
+
+	public TicTacToe() {
+		// instantiate a game
+		this.game = new Game();
+		this.human = new HumanPlayer();
+		this.computer = new ComputerPlayer();
+
+	}
+
+	// Getters and setters
+	public ComputerPlayer getComputer() {
+		return computer;
+	}
+
+	public void setComputer(ComputerPlayer computer) {
+		this.computer = computer;
+	}
+
+	public HumanPlayer getHuman() {
+		return human;
+	}
+
+	public void setHuman(HumanPlayer human) {
+		this.human = human;
+	}
+
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
+    public void runGame(){
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (!this.getGame().gameOver()){
+            System.out.println(&quot;Please enter a number from 1-9&quot;);
+            String s = &quot;&quot;;
+            try
+            {
+                s = br.readLine();
+//            positionNumber = Integer.valueOf(s);
+
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+
+            while(!this.getHuman().checkLegalInput(s)){
+                System.out.println(&quot;Please enter a number from 1-9&quot;);
+                try
+                {
+                    s = br.readLine();
+
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            // if we can't move to the field the user wants to we go
+            // to the next iteration of the loop
+            if (!this.getHuman().makeMove(this.getGame(), s)){
+                continue;
+            }
+
+            this.getGame().displayBoard();
+            // Check if this move resulted in a win
+            if(this.getGame().gameOver()){
+                System.out.println(&quot;Congratulations! You won the computer!&quot;);
+                this.getHuman().incrementScore();
+                break;
+            }
+            // Make the computer play
+
+            int compPos = this.getComputer().makeMove();
+            while(true){
+                if(this.getGame().mapInputToSquare(compPos,this.getComputer().getPlayerMark())){
+                    break;
+                }
+                else {
+                    compPos = this.getComputer().makeMove();
+                }
+            }
+            this.getGame().displayBoard();
+            if(this.getGame().gameOver()){
+                System.out.println(&quot;Sorry! The Computer won!&quot;);
+                this.getComputer().incrementScore();
+                break;
+            }
+
+            if(this.getGame().checkForTie()){
+                System.out.println(&quot;The Game resulted in a tie&quot;);
+            }
+        }
+    }
+
+	// A main function to run our game
+	public static void main(String[] args){
+		TicTacToe ttt = new TicTacToe();
+		ttt.getGame().displayBoard();
+
+		System.out.println(&quot;Human plays as: &quot; + ttt.getHuman().getPlayerMark());
+		System.out.println(&quot;Computer plays as: &quot; + ttt.getComputer().getPlayerMark());
+
+		ttt.runGame();
+
+		System.out.println(&quot;The game ended! The score is:&quot;);
+		System.out.println(&quot;Human: &quot; + ttt.getHuman().getScore()+ &quot; - &quot; +&quot;Computer: &quot; + ttt.getComputer().getScore());
+
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
