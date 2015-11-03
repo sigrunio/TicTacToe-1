@@ -37,8 +37,14 @@ public class TicTacToeWeb implements SparkApplication {
 
             String inputMove = String.valueOf(req.queryParams("move"));
 
+            if(!game.getHuman().checkLegalInput(inputMove)) {
+                return "Illegal input!";
+            }
+
             if(!game.getGame().gameOver()){
-                game.getHuman().makeMove(game.getGame(), inputMove);
+                if(!game.getHuman().makeMove(game.getGame(), inputMove)) {
+                    return "Square Occupied!";
+                }
                 //game.getGame().mapInputToSquare(game.getComputer().makeMove(), game.getComputer().getPlayerMark());
             }
 
