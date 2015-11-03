@@ -5,9 +5,9 @@ deploy:
   provider: heroku
   api_key:
     secure: "w74qPOeZBOq87zx0dTgGDZolWaxohUUGwatv4Xb5BrGPmSNd7jTvg+hCx/A/ZbLbdT3wdRCPNZ3+Vyi1WsW2KEERq7rThWdkVbzKSiDODHQ5jAyTYLwLGD4C8VmnOOPw2BcRmJQZDZCSvnIXVJ3ozYaGfP/8SqArsDBNdwZJ35EOdBfgbk98e2Fy7BUnoiGy+0Jc769OLwzNe65326Fcjlqx/RtCyC5rCUJOeOKwVOje7tAHaMg+kzlzlLocsilQc1uDNWH8fa0ScqCyBZnwwmIEtbXPB3pscJe5B5Fsd3hXKTJCicChlwINLWJx5SFyZ1CKgasVvrRZxnw7+YyjApaT40xV4yWGVhRtCGS8Rir+ph9IRxzAR0aElVdYLxnOZ91LrE8VpT3NmUcp5RuwxG7ELCLpgaRm39VzSC33cvtBTW2X6T5vQkmwOxxowMXy09H90pp7spbUk/ScfibzR3zs/jyGE6POx4AXqQnXcEVt1OPfmfiqy/lccBJw5DKiovGLg2MNfuHwfb1Rn7Pra9zKglT6+90evEt8Nj4g+jzSOyAoy3sYzkvUtEKCHhnqKnaGb2FqiGPG5iKeKSqm4xuoVWf3pVq+Ym8KmnQhKtXPiEOBjAzxRhrHU5Hu/Xq+Wwmj062BTyqF734AUa8mcKcx8ZroTqWKAspT9APNg5A="  
-  app: 
-    staging: tasktictactoe-staging
-  run: "./gradlew seleniumXvfb"
+  app: tasktictactoe-staging
 script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
+after_deploy:
+  - ./gradlew seleniumXvfb
