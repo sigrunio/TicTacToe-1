@@ -1,3 +1,4 @@
+
 package com.example.tests;
 
 import java.util.regex.Pattern;
@@ -9,7 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TicTacToeWebTest {
+public class Tests {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,8 +19,40 @@ public class TicTacToeWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://tasktictactoe.herokuapp.com/hello";
+    baseUrl = "http://secure-lake-2765.herokuapp.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testS() throws Exception {
+    driver.get(baseUrl + "/");
+    driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.id("board"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    driver.findElement(By.id("move")).clear();
+    driver.findElement(By.id("move")).sendKeys("a");
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.id("board"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (driver.findElement(By.cssSelector("div.alert-success")).isDisplayed()) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    try {
+      assertEquals("Illegal input!", driver.findElement(By.id("results")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
   }
 
   @After
