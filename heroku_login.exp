@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+spawn heroku "login"
+
+expect "Email:"
+
+send "tomass11@ru.is";
+
+send "\r"
+
+expect "Password (typing will be hidden):"
+
+send "304bf8fb-8378-4ef5-8b6c-5126a62b380e"
+
+send "\r"
+
+interact
