@@ -66,26 +66,5 @@ public class HumanPlayerTest {
     }
 
 
-    // Test if askMove returns an integer
-    @Test
-    public void askMoveReturnType(){
-        ByteArrayInputStream in = new ByteArrayInputStream("4".getBytes());
-        System.setIn(in);
-        HumanPlayer h = new HumanPlayer();
-        assertEquals(4, h.askMove());
-        System.setIn(System.in);
-    }
-
-
-    // Test if makeMove returns a legal integer
-
-
-
-
-
-
-
-
-
 
 }

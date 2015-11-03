@@ -39,6 +39,17 @@ public class TicTacToeWeb implements SparkApplication {
 
             if(!game.getGame().gameOver()){
                 game.getHuman().makeMove(game.getGame(), inputMove);
+                //game.getGame().mapInputToSquare(game.getComputer().makeMove(), game.getComputer().getPlayerMark());
+            }
+
+            int compPos = game.getComputer().makeMove();
+            while(true){
+                if(game.getGame().mapInputToSquare(compPos,game.getComputer().getPlayerMark())){
+                    break;
+                }
+                else {
+                    compPos = game.getComputer().makeMove();
+                }
             }
 
             res.status(200);
