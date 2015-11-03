@@ -4,7 +4,7 @@ Linux/Mac: ???
 
 #### To be able to make the project build on a fresh machine, you need to write the following command line: 
 
-**Activate an SSH key**
+**Activate a SSH key**
 
 * ssh-keygen -> Enter -> Enter (for default file name and no password)  
 * pbcopy < ~/.ssh/id_rsa.pub  	   
