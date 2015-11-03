@@ -37,16 +37,16 @@
           <div class="inner cover">
             <h1 class="cover-heading">TicTacToe</h1>
             <p id="board" class="lead"></p>
-              <p class="lead">
+
               <form method="post" action="/makemove" class="form-inline" role="form">
-                  <input type="text" name="move" id="move"/>
+                  <input type="text" name="move" id="move"/><br>
                   <button type="submit" class="btn btn-lg btn-default">Make Move</button>
               </form>
 
               <form method="post" action="/newgame" class="form-inline" role="form">
                     <button type="submit" class="btn btn-lg btn-default">New Game</button>
               </form>
-            </p>
+
               <div id="results" class="lead"></div>
           </div>
 
@@ -77,7 +77,7 @@
                 event.preventDefault();
             });
             $.get("getboard", function(data, status){
-                $('#board').html(data).attr('class', 'alert alert-success');
+                $('#board').html(data);
             });
         });
     </script>
