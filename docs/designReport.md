@@ -18,7 +18,7 @@ Here below is a list of tools that were used during the development of the proje
 
 ## Class Diagram
 
-￼
+![alt text](https://raw.githubusercontent.com/HUGB-Task/TicTacToe/Docs/docs/klasarit.jpg)
 ￼￼
 ￼
 ￼￼
