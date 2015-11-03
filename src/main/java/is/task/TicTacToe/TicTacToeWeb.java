@@ -50,10 +50,10 @@ public class TicTacToeWeb implements SparkApplication {
 
             if(game.getGame().gameOver()) {
                 if (game.getGame().checkForTie()) {
-                    return "It's a Tie";
+                    return "It's a Tie.";
                 }
                 else {
-                    return "Human wins!";
+                    return "YOU WIN!";
                 }
             }
 
