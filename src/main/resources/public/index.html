@@ -62,6 +62,9 @@
     <!-- Use ajax to submit form, retrive joke and display on page -->
     <script>
         $(document).ready(function() {
+            $.get("getboard", function(data, status){
+                $('#board').html(data);
+            });
             var form = $('#makemove');
             form.submit(function( event ) {
                 var move =$("#move").val();
@@ -72,16 +75,13 @@
                     data: 'move=' + move
                 }).done(function(result) {
                     $('#results').html(result);
+                    $.get("getboard", function(data, status){
+                        $('#board').html(data);
+                    });
                 }).fail(function() {
                     $('#results').html('Error, no one wins?');
                 });
                 event.preventDefault();
-                $.get("getboard", function(data, status){
-                    $('#board').html(data);
-                });
-            });
-            $.get("getboard", function(data, status){
-                $('#board').html(data);
             });
         });
     </script>
