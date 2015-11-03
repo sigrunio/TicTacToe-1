@@ -1,33 +1,35 @@
 # Administrator Manual
 
-### How to set the it up and get it to run on a fresh maschine
+### How to set up and get it running.
 
-If you haven´t checked out the development manual, make sure to do that prior to making the following commands: 
+**MARK:** Please do the steps in Development manual before continuing.
 
-**Create a new branch**  
+##### Run the Application Locally:
+- **To** **Run:** terminal: $ cd ~/TicTacToe and $ ./gradlew run
+- **Open** **URL:** open your favorite browser and type: http://0.0.0.0:4567 or just 0.0.0.0:4567. The site should run locally if "./gradlew run" has not been terminated.
+- **Close** **Game**: close the browser and type "CTRL-C" in terminal.
 
-* git checkout -b "your-branch-name"
+##### Deploy the application:
+- **To** **Deploy:** terminal: $ cd ~/TicTacToe and $ ./bin/deploy
+- jar/application is supposed to be generated outside the root (~/TicTacToce folder which was generated with git clone..) of the application.
 
-**Check your new changes**  
+##### Run tests:
+- **To** **Run:** terminal: $ cd ~/TicTacToe and $ ./gradlew test
 
-* git status
+---
 
-**Commit your changes**
+#### How to maintain the application 
 
-* git add "your-changes"  
-* git commit -m "your-comment"
+##### Set up Travis 
+- Sign up with Github on (Travis)[https://travis-ci.org]
+- Go to https://travis-ci.org/profile/USERNAME and click your Github Organization
+- Flick the switch of the TicTacToe repository
+- Start making changes, commit on github.
+- As soon as you commit Travis will start automatic build on your repository.
 
-**Push your branch to Github**  
-
-* git push -u "your-branch"
-
-**Merge your branch to master**
-
-* git checkout master
-* git merge "your-branch"
-
-**Push your changes to Github**  
-
-* git push origin master
-
-As soon as you push your changes to Github, that is if all your tests have passed, it will be automatically deployed to Travis and Heroku.  
+##### Set up Heroku
+- Sign up on (Heroku)[https://www.heroku.com]
+- Set up (Heroku toolbelt)[https://toolbelt.heroku.com] 
+- To login to master in terminal: $ heroku login 
+- After changes have been made type in terminal: $ heroku push master
+- The master branch on git is stored at <app name>.herokuapp.com  
