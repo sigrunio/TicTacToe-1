@@ -1,6 +1,9 @@
 language: java
 jdk:
 - oraclejdk8
+install:
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - heroku plugins:install https://github.com/ddollar/heroku-push
 deploy:
   provider: heroku
   api_key:
@@ -11,3 +14,4 @@ script:
   - ./gradlew jacocoTestReport
 after_deploy:
   - ./gradlew seleniumXvfb
+  - heroku push --apptasktictactoe
