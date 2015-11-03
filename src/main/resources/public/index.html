@@ -74,10 +74,10 @@
                     url: form.attr('action'),
                     data: 'move=' + move
                 }).done(function(result) {
-                    $('#results').html(result);
                     $.get("getboard", function(data, status){
                         $('#board').html(data);
                     });
+                    $('#results').html(result);
                 }).fail(function() {
                     $('#results').html('Error, no one wins?');
                 });

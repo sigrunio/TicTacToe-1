@@ -19,7 +19,9 @@ a:hover {
   border: 1px solid #fff;
 }
 
-
+input {
+    color: #303030;
+}
 /*
  * Base structure
  */
