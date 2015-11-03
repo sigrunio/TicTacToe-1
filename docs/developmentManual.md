@@ -1,39 +1,26 @@
 #Development Manual
 
-Linux/Mac??
+#### To make the project build do the following steps on a UNIX based system (Linux/Mac):
 
-#### To be able to make the project build on a fresh machine, you need to write the following command line: 
+##### Set up Git Source Control Client: 
+- **To** **Install:** open terminal and type: $ sudo apt-get install git 
+- **SSH** **Key:** 
+    * terminal: $ ssh-keygen -> Enter -> Enter (for default file name and no password)
+    * terminal: $ cat ~/.ssh/id_rsa.pub and copy the key
+    * Sign up on GitHub 
+    * Open profile -> settings -> SSH keys -> add SSH key
+    * Verify SSH in terminal: $ ssh -T git@github.com" -> yes -> hi.. should appear
+- **Clone Repository**: $ git clone with _SSH_: git@github.com:HUGB-Task/TicTacToe.git
+or _HTTPS_: 
+https://github.com/HUGB-Task/TicTacToe.git
+		
+##### Set up Java:
+- **To** **Install:** terminal: $ sudo apt-get install openjdk-8-jdk
 
-**Activate a SSH key**
+##### Set up Gradle which is a build automation tool:
+- **To** **Install:** terminal: $ sudo apt-get install gradle
 
-* ssh-keygen -> Enter -> Enter (for default file name and no password)  
-* pbcopy < ~/.ssh/id_rsa.pub  	   
-* open Github profile  -> settings -> SSH keys -> add SSH key
-					
-**Download git**  
+##### Build the Application locally :
+- **To** **Build:** terminal: $ cd ~/TicTacToe and $ ./gradlew build 
 
-* sudo apt-get install git  
-					
-**Set your identification on git**  
 
-* git config --global user.email "your@email.com"  
-* git config --global user.name "Your Name"
-
-					
-**Clone the repository into a machine of your choice**  
-
-* git clone https://github.com/HUGB-Task/TicTacToe.git
-
-					
-**Download java**
-
-* Check if you already have java on your machine by writing: 
-	* java -version  
-* If nothing is returned you will have to install it by writing:
-	* sudo apt-get install openjdk-8-jdk
-					
-**Build the project**  
-
-* ./gradlew build
-
-We use Heroku to deploy and host our application.
