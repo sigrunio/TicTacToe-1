@@ -2,7 +2,7 @@ language: java
 jdk:
 - oraclejdk8
 install:
-  - sudo get -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   - heroku plugins:install https://github.com/ddollar/heroku-push
   - sudo apt-get install expect
 deploy:
