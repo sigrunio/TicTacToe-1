@@ -18,13 +18,8 @@ public class TicTacToeWebTest {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "https://blooming-mountain-4990.herokuapp.com/hello";
+    baseUrl = "https://tasktictactoe.herokuapp.com/hello";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void test() throws Exception {
-    assertEquals("Hello World2", driver.findElement(By.cssSelector("body")).getText());
   }
 
   @After
