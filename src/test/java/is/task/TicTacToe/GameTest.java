@@ -24,15 +24,15 @@ public class GameTest {
         assertEquals(8, temp[2][1].getSquareNumber());
         assertEquals(9, temp[2][2].getSquareNumber());
 
-        assertEquals('-', temp[0][0].getCurrentSquareMark());
-        assertEquals('-', temp[0][1].getCurrentSquareMark());
-        assertEquals('-', temp[0][2].getCurrentSquareMark());
-        assertEquals('-', temp[1][0].getCurrentSquareMark());
-        assertEquals('-', temp[1][1].getCurrentSquareMark());
-        assertEquals('-', temp[1][2].getCurrentSquareMark());
-        assertEquals('-', temp[2][0].getCurrentSquareMark());
-        assertEquals('-', temp[2][1].getCurrentSquareMark());
-        assertEquals('-', temp[2][2].getCurrentSquareMark());
+        assertEquals("1", temp[0][0].getCurrentSquareMark());
+        assertEquals("2", temp[0][1].getCurrentSquareMark());
+        assertEquals("3", temp[0][2].getCurrentSquareMark());
+        assertEquals("4", temp[1][0].getCurrentSquareMark());
+        assertEquals("5", temp[1][1].getCurrentSquareMark());
+        assertEquals("6", temp[1][2].getCurrentSquareMark());
+        assertEquals("7", temp[2][0].getCurrentSquareMark());
+        assertEquals("8", temp[2][1].getCurrentSquareMark());
+        assertEquals("9", temp[2][2].getCurrentSquareMark());
 
         assertFalse(temp[0][0].getMarked());
         assertFalse(temp[0][1].getMarked());
@@ -50,9 +50,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[0][1].setCurrentSquareMark('X');
-        temp[0][2].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[0][1].setCurrentSquareMark("X");
+        temp[0][2].setCurrentSquareMark("X");
 
         assertTrue(g.checkRowWin());
     }
@@ -62,9 +62,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[0][1].setCurrentSquareMark('O');
-        temp[0][2].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[0][1].setCurrentSquareMark("O");
+        temp[0][2].setCurrentSquareMark("X");
 
         assertFalse(g.checkRowWin());
     }
@@ -74,9 +74,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][0].setCurrentSquareMark('X');
-        temp[2][0].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][0].setCurrentSquareMark("X");
+        temp[2][0].setCurrentSquareMark("X");
 
         assertTrue(g.checkSquares(temp[0][0], temp[1][0], temp[2][0]));
     }
@@ -86,9 +86,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][0].setCurrentSquareMark('O');
-        temp[2][0].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][0].setCurrentSquareMark("O");
+        temp[2][0].setCurrentSquareMark("X");
 
         assertFalse(g.checkSquares(temp[0][0], temp[1][0], temp[2][0]));
     }
@@ -98,9 +98,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][0].setCurrentSquareMark('X');
-        temp[2][0].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][0].setCurrentSquareMark("X");
+        temp[2][0].setCurrentSquareMark("X");
 
         assertTrue(g.checkColumnWin());
     }
@@ -110,9 +110,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][0].setCurrentSquareMark('O');
-        temp[2][0].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][0].setCurrentSquareMark("O");
+        temp[2][0].setCurrentSquareMark("X");
 
         assertFalse(g.checkColumnWin());
     }
@@ -122,9 +122,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][1].setCurrentSquareMark('X');
-        temp[2][2].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][1].setCurrentSquareMark("X");
+        temp[2][2].setCurrentSquareMark("X");
 
         assertTrue(g.checkDiagonalWin());
     }
@@ -134,9 +134,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][1].setCurrentSquareMark('O');
-        temp[2][2].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][1].setCurrentSquareMark("O");
+        temp[2][2].setCurrentSquareMark("X");
 
         assertFalse(g.checkDiagonalWin());
     }
@@ -178,15 +178,15 @@ public class GameTest {
     public void testMapInputToSquare_BoardIsEmpty_ReturnTrue() {
         Game g = new Game();
 
-        assertTrue(g.mapInputToSquare(1, 'X'));
-        assertTrue(g.mapInputToSquare(2, 'O'));
-        assertTrue(g.mapInputToSquare(3, 'X'));
-        assertTrue(g.mapInputToSquare(4, 'O'));
-        assertTrue(g.mapInputToSquare(5, 'X'));
-        assertTrue(g.mapInputToSquare(6, 'O'));
-        assertTrue(g.mapInputToSquare(7, 'X'));
-        assertTrue(g.mapInputToSquare(8, 'O'));
-        assertTrue(g.mapInputToSquare(9, 'X'));
+        assertTrue(g.mapInputToSquare(1, "X"));
+        assertTrue(g.mapInputToSquare(2, "O"));
+        assertTrue(g.mapInputToSquare(3, "X"));
+        assertTrue(g.mapInputToSquare(4, "O"));
+        assertTrue(g.mapInputToSquare(5, "X"));
+        assertTrue(g.mapInputToSquare(6, "O"));
+        assertTrue(g.mapInputToSquare(7, "X"));
+        assertTrue(g.mapInputToSquare(8, "O"));
+        assertTrue(g.mapInputToSquare(9, "X"));
     }
 
     @Test
@@ -198,9 +198,9 @@ public class GameTest {
         temp[1][1].setMarked(true);
         temp[2][2].setMarked(true);
 
-        assertFalse(g.mapInputToSquare(1, 'X'));
-        assertFalse(g.mapInputToSquare(5, 'X'));
-        assertFalse(g.mapInputToSquare(9, 'X'));
+        assertFalse(g.mapInputToSquare(1, "X"));
+        assertFalse(g.mapInputToSquare(5, "X"));
+        assertFalse(g.mapInputToSquare(9, "X"));
     }
 
     @Test
@@ -208,9 +208,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][0].setCurrentSquareMark('X');
-        temp[2][0].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][0].setCurrentSquareMark("X");
+        temp[2][0].setCurrentSquareMark("X");
 
         assertTrue(g.gameOver());
     }
@@ -220,9 +220,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[0][1].setCurrentSquareMark('X');
-        temp[0][2].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[0][1].setCurrentSquareMark("X");
+        temp[0][2].setCurrentSquareMark("X");
 
         assertTrue(g.gameOver());
     }
@@ -232,9 +232,9 @@ public class GameTest {
         Game g = new Game();
         Square[][] temp  = g.getGameBoard();
 
-        temp[0][0].setCurrentSquareMark('X');
-        temp[1][1].setCurrentSquareMark('X');
-        temp[2][2].setCurrentSquareMark('X');
+        temp[0][0].setCurrentSquareMark("X");
+        temp[1][1].setCurrentSquareMark("X");
+        temp[2][2].setCurrentSquareMark("X");
 
         assertTrue(g.gameOver());
     }

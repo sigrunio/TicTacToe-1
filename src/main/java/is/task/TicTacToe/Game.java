@@ -20,22 +20,25 @@ public class Game {
 
         for (int i = 0;i < 3 ;i++ ) {
             for (int j = 0;j < 3 ;j++) {
-                this.gameBoard[i][j] = new Square(squareNumber,'-',false);
+                this.gameBoard[i][j] = new Square(squareNumber,Integer.toString(squareNumber),false);
                 squareNumber++;
             }
         }
     }
 
-    public void displayBoard(){
-        System.out.println("-------------");
+    public String displayBoard(){
+        String board = "";
+        board = strCat(board, "-------------</br>");
         for (int i = 0;i < 3 ;i++ ) {
-            System.out.print("| ");
+            board = strCat(board, "| ");
             for (int j = 0;j < 3 ;j++) {
-                System.out.print(this.gameBoard[i][j].getCurrentSquareMark() + " | ");
+                board = strCat(board, this.gameBoard[i][j].getCurrentSquareMark() + " | ");
             }
-            System.out.println();
-            System.out.println("-------------");
+            board = strCat(board, "</br>");
+            board = strCat(board, "-------------</br>");
         }
+        System.out.print(board);
+        return board;
     }
 
     // Checks all the rows on the board for winning strategy
@@ -50,9 +53,9 @@ public class Game {
 
         // A function which returns true if three squares are the same
     public boolean checkSquares(Square sq1, Square sq2, Square sq3){
-        return (sq1.getCurrentSquareMark() != '-')  &&
+        return (
                 (sq1.getCurrentSquareMark() == sq2.getCurrentSquareMark()) &&
-                (sq2.getCurrentSquareMark() == sq3.getCurrentSquareMark());
+                (sq2.getCurrentSquareMark() == sq3.getCurrentSquareMark()));
     }
 
     // Checks all the columns on the board for winning strategy
@@ -85,7 +88,7 @@ public class Game {
     }
 
     // map the input
-    public boolean mapInputToSquare(int squarePosition, char playerMark){
+    public boolean mapInputToSquare(int squarePosition, String playerMark){
         // loop through the squares and check each squares position
         // if the square is free we mark it if not we ask the user again for input
         for (int i = 0; i < 3; i++) {
@@ -110,8 +113,12 @@ public class Game {
     }
 
     public boolean gameOver(){
-        return checkColumnWin() || checkRowWin() || checkDiagonalWin();
+        return checkColumnWin() || checkRowWin() || checkDiagonalWin() || checkForTie();
     }
 
-
+    private String strCat(String board, String addBoard){
+        //string cat function
+        board += addBoard;
+        return board;
+    }
 }

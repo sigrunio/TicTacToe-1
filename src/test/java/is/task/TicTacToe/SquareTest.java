@@ -22,12 +22,6 @@ public class SquareTest {
         assertFalse(s.getMarked());
     }
 
-	@Test
-    public void testGetCurrentSquareMark_SquareEmpty_returnDash()  {
-        Square s = new Square();
-
-        assertEquals('-', s.getCurrentSquareMark());
-    }    
 
     @Test
     public void testSetSquareNumber_SquareNumberIsOne_returnOne() {
@@ -48,16 +42,16 @@ public class SquareTest {
     @Test
     public void testSetCurrentSquareMark_CurrentSquareMarkIsX_returnX() {
         Square s = new Square();
-        s.setCurrentSquareMark('X');
+        s.setCurrentSquareMark("X");
 
-        assertEquals('X', s.getCurrentSquareMark());
+        assertEquals("X", s.getCurrentSquareMark());
     }
 
     @Test
     public void testSetCurrentSquareMark_CurrentSquareMarkIsO_returnO() {
         Square s = new Square();
-        s.setCurrentSquareMark('O');
+        s.setCurrentSquareMark("O");
 
-        assertEquals('O', s.getCurrentSquareMark());
+        assertEquals("O", s.getCurrentSquareMark());
     }
 }

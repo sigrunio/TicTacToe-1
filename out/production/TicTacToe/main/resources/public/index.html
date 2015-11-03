@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>TicTacToe</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="inner cover">
+            <h1 class="cover-heading">TicTacToe</h1>
+            <p id="board" class="lead"></p>
+              <p id="results" class="lead"></p>
+
+              <form method="post" action="/makemove" role="form" id="makemove">
+                  <p><input type="text" name="move" id="move"/></p><br>
+                  <p><button type="submit" class="btn btn-lg btn-default">Make Move</button></p>
+              </form>
+
+              <form method="post" action="/newgame" class="form-inline" role="form">
+                    <p><button type="submit" class="btn btn-lg btn-default">New Game</button></p>
+              </form>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Use ajax to submit form, retrive joke and display on page -->
+    <script>
+        $(document).ready(function() {
+            $.get("getboard", function(data, status){
+                $('#board').html(data);
+            });
+            var form = $('#makemove');
+            form.submit(function( event ) {
+                var move =$("#move").val();
+                $("#move").val("");
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: 'move=' + move
+                }).done(function(result) {
+                    $.get("getboard", function(data, status){
+                        $('#board').html(data);
+                    });
+                    $('#results').html(result);
+                }).fail(function() {
+                    $('#results').html('Error, no one wins?');
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
