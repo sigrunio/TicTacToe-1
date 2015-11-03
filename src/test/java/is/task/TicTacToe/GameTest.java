@@ -24,15 +24,15 @@ public class GameTest {
         assertEquals(8, temp[2][1].getSquareNumber());
         assertEquals(9, temp[2][2].getSquareNumber());
 
-        assertEquals('-', temp[0][0].getCurrentSquareMark());
-        assertEquals('-', temp[0][1].getCurrentSquareMark());
-        assertEquals('-', temp[0][2].getCurrentSquareMark());
-        assertEquals('-', temp[1][0].getCurrentSquareMark());
-        assertEquals('-', temp[1][1].getCurrentSquareMark());
-        assertEquals('-', temp[1][2].getCurrentSquareMark());
-        assertEquals('-', temp[2][0].getCurrentSquareMark());
-        assertEquals('-', temp[2][1].getCurrentSquareMark());
-        assertEquals('-', temp[2][2].getCurrentSquareMark());
+        assertEquals("-", temp[0][0].getCurrentSquareMark());
+        assertEquals("-", temp[0][1].getCurrentSquareMark());
+        assertEquals("-", temp[0][2].getCurrentSquareMark());
+        assertEquals("-", temp[1][0].getCurrentSquareMark());
+        assertEquals("-", temp[1][1].getCurrentSquareMark());
+        assertEquals("-", temp[1][2].getCurrentSquareMark());
+        assertEquals("-", temp[2][0].getCurrentSquareMark());
+        assertEquals("-", temp[2][1].getCurrentSquareMark());
+        assertEquals("-", temp[2][2].getCurrentSquareMark());
 
         assertFalse(temp[0][0].getMarked());
         assertFalse(temp[0][1].getMarked());
