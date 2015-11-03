@@ -16,4 +16,5 @@ script:
 after_deploy:
   - ./gradlew seleniumXvfb
   - expect heroku_login.exp
-  - heroku push --apptasktictactoe
+  - heroku git:remote -a tasktictactoe
+  - git push heroku master
