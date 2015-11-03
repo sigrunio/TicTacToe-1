@@ -14,19 +14,19 @@ If you haven´t checked out the development manual, make sure to do that prior t
 
 **Commit your changes**
 
-* git add "yourchanges"  
-* git commit -m "your comment"
+* git add "your-changes"  
+* git commit -m "your-comment"
 
 **Push your branch to Github**  
 
 * git push -u "your-branch"
 
-**Merge the branch to master**
+**Merge your branch to master**
 
 * git checkout master
 * git merge "your-branch"
 
-**Push the changes to Github**  
+**Push your changes to Github**  
 
 * git push origin master
 
