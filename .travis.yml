@@ -10,7 +10,7 @@ script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
   - ./gradlew seleniumXvfb
-after_success:
+after_script:
   deploy:
     provider: heroku
     api_key:
