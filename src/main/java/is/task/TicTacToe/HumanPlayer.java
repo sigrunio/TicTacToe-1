@@ -8,7 +8,7 @@ import java.io.InputStreamReader;import java.lang.Integer;import java.lang.Strin
 public class HumanPlayer extends Player{
 
     public HumanPlayer(){
-        super(0,'X');
+        super(0,"X");
     }
 
 
