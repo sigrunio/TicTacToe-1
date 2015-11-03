@@ -113,7 +113,7 @@ public class Game {
     }
 
     public boolean gameOver(){
-        return checkColumnWin() || checkRowWin() || checkDiagonalWin();
+        return checkColumnWin() || checkRowWin() || checkDiagonalWin() || checkForTie();
     }
 
     private String strCat(String board, String addBoard){

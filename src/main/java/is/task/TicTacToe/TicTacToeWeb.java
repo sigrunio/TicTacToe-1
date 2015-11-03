@@ -42,16 +42,34 @@ public class TicTacToeWeb implements SparkApplication {
                 //game.getGame().mapInputToSquare(game.getComputer().makeMove(), game.getComputer().getPlayerMark());
             }
 
-            int compPos = game.getComputer().makeMove();
-            while(true){
-                if(game.getGame().mapInputToSquare(compPos,game.getComputer().getPlayerMark())){
-                    break;
+            if(game.getGame().gameOver()) {
+                if (game.getGame().checkForTie()) {
+                    return "It's a Tie";
                 }
                 else {
-                    compPos = game.getComputer().makeMove();
+                    return "Human wins!";
                 }
             }
 
+            if(!game.getGame().gameOver()) {
+                int compPos = game.getComputer().makeMove();
+                while (true) {
+                    if (game.getGame().mapInputToSquare(compPos, game.getComputer().getPlayerMark())) {
+                        break;
+                    } else {
+                        compPos = game.getComputer().makeMove();
+                    }
+                }
+            }
+
+            if(game.getGame().gameOver()) {
+                if (game.getGame().checkForTie()) {
+                    return "It's a Tie";
+                }
+                else {
+                    return "Computer wins!";
+                }
+            }
             res.status(200);
             return "";
             /*StringBuilder html = new StringBuilder();
