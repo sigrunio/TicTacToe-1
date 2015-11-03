@@ -1,8 +1,8 @@
 #Development Manual
 
-#### To be able to make the project build on a fresh machine, you need to write the following command line: 
+Linux/Mac: ???
 
-Linux/Mac: 
+#### To be able to make the project build on a fresh machine, you need to write the following command line: 
 
 **Activate an SSH key**
 
@@ -30,7 +30,7 @@ Linux/Mac:
 * Check if you already have java on your machine by writing: 
 	* java -version  
 * If nothing is returned you will have to install it by writing:
-	* sudo apt-get install
+	* sudo apt-get install openjdk-8-jdk
 					
 **Build the project**  
 
