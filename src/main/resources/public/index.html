@@ -37,15 +37,15 @@
           <div class="inner cover">
             <h1 class="cover-heading">TicTacToe</h1>
             <p id="board" class="lead"></p>
-              <div id="results" class="lead"></div>
+              <p id="results" class="lead"></p>
 
               <form method="post" action="/makemove" class="form-inline" role="form">
                   <input type="text" name="move" id="move"/><br>
-                  <button type="submit" class="btn btn-lg btn-default">Make Move</button>
+                  <p><button type="submit" class="btn btn-lg btn-default">Make Move</button></p>
               </form>
 
               <form method="post" action="/newgame" class="form-inline" role="form">
-                    <button type="submit" class="btn btn-lg btn-default">New Game</button>
+                    <p><button type="submit" class="btn btn-lg btn-default">New Game</button></p>
               </form>
 
 
@@ -71,11 +71,14 @@
                     url: form.attr('action'),
                     data: 'move=' + move
                 }).done(function(result) {
-                    $('#results').html(result).attr('class', 'alert alert-success');
+                    $('#results').html(result);
                 }).fail(function() {
-                    $('#results').html('Error, no one wins?').attr('class', 'alert alert-danger');
+                    $('#results').html('Error, no one wins?');
                 });
                 event.preventDefault();
+                $.get("getboard", function(data, status){
+                    $('#board').html(data);
+                });
             });
             $.get("getboard", function(data, status){
                 $('#board').html(data);
