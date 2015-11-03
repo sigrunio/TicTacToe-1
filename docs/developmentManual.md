@@ -1,6 +1,6 @@
 #Development Manual
 
-Linux/Mac: ???
+Linux/Mac??
 
 #### To be able to make the project build on a fresh machine, you need to write the following command line: 
 
