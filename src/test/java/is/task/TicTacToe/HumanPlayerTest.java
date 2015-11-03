@@ -18,7 +18,7 @@ public class HumanPlayerTest {
     public void testPlayerMark(){
 
         HumanPlayer h = new HumanPlayer();
-        assertEquals('X', h.getPlayerMark());
+        assertEquals("X", h.getPlayerMark());
     }
 
     // Test if human player's score is zero at initialization
