@@ -35,3 +35,5 @@ Linux/Mac??
 **Build the project**  
 
 * ./gradlew build
+
+We use Heroku to deploy and host our application.
