@@ -4,15 +4,15 @@ public class Square {
    
     protected int squareNumber;
     protected boolean isMarked;
-    protected char currentSquareMark;
+    protected String currentSquareMark;
 
     public Square() {
         this.squareNumber = 0;
         this.isMarked = false;
-   	    this.currentSquareMark = '-';
+   	    this.currentSquareMark = "-";
     }
 
-    public Square(int number, char mark, boolean isMarked){
+    public Square(int number, String mark, boolean isMarked){
         this.squareNumber = number;
         this.currentSquareMark = mark;
         this.isMarked = isMarked;
@@ -37,11 +37,11 @@ public class Square {
     }
 
     // The current marked symbol in the square
-    public char getCurrentSquareMark(){
+    public String getCurrentSquareMark(){
         return this.currentSquareMark;
     }
 
-    public void setCurrentSquareMark(char mark){
+    public void setCurrentSquareMark(String mark){
         this.currentSquareMark = mark;
     }
 

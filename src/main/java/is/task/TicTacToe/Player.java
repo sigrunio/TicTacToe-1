@@ -2,13 +2,13 @@ package main.java.is.task.TicTacToe;
 
 public class Player {
     protected int score;
-    protected char playerMark;
+    protected String playerMark;
 
     public Player(){
 
     }
 
-    public Player(int score, char playerMark){
+    public Player(int score, String playerMark){
         this.score = score;
         this.playerMark = playerMark;
     }
@@ -17,11 +17,11 @@ public class Player {
         this.score += 1;
     }
 
-    public char getPlayerMark() {
+    public String getPlayerMark() {
         return playerMark;
     }
 
-    public void setPlayerMark(char playerMark) {
+    public void setPlayerMark(String playerMark) {
         this.playerMark = playerMark;
     }
 

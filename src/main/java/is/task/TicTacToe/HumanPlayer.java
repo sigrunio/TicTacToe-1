@@ -8,47 +8,9 @@ import java.io.InputStreamReader;import java.lang.Integer;import java.lang.Strin
 public class HumanPlayer extends Player{
 
     public HumanPlayer(){
-        super(0,'X');
+        super(0,"X");
     }
 
-
-    public int askMove(){
-        // Instantiate a new reader to get input from user
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        System.out.println("Please enter a number from 1-9");
-        // Try to get the next move from user input
-        int positionNumber = 0;
-
-        String s = "";
-        try
-        {
-            s = br.readLine();
-//            positionNumber = Integer.valueOf(s);
-
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        while(!checkLegalInput(s)){
-            System.out.println("Please enter a number from 1-9");
-            try
-            {
-                s = br.readLine();
-
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-
-        positionNumber = Integer.valueOf(s);
-        return positionNumber;
-
-    }
 
     public boolean checkLegalInput(String s){
         int inputNumber = 0;
@@ -72,15 +34,11 @@ public class HumanPlayer extends Player{
         return !((number < 1) || (number > 9));
     }
 
-    public int makeMove()
+    public boolean makeMove(Game g, String s)
     {
-        int position;
-        position = askMove();
-        if (position == 0){
-            makeMove();
-        }
+        // check if field is taken
+        int position = Integer.parseInt(s);
+        return g.mapInputToSquare(position,this.getPlayerMark());
 
-        return position;
     }
 }
-

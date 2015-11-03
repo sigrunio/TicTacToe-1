@@ -1,5 +1,9 @@
 package main.java.is.task.TicTacToe;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class TicTacToe{
 
 	// our Game to be run
@@ -43,47 +47,71 @@ public class TicTacToe{
 		this.game = game;
 	}
 
-	public void runGame(){
-		while (!this.getGame().gameOver()){
-			int humanPos =  this.getHuman().makeMove();
-			while(true){
-				if(this.getGame().mapInputToSquare(humanPos,this.getHuman().getPlayerMark())){
-					break;
-				}
-				else {
-					humanPos = this.getHuman().makeMove();
-				}
-			}
-			this.getGame().displayBoard();
-			// Check if this move resulted in a win
-			if(this.getGame().gameOver()){
-				System.out.println("Congratulations! You won the computer!");
-				this.getHuman().incrementScore();
-				break;
-			}
-			// Make the computer play
+    public void runGame(){
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (!this.getGame().gameOver()){
+            System.out.println("Please enter a number from 1-9");
+            String s = "";
+            try
+            {
+                s = br.readLine();
+//            positionNumber = Integer.valueOf(s);
 
-			int compPos = this.getComputer().makeMove();
-			while(true){
-				if(this.getGame().mapInputToSquare(compPos,this.getComputer().getPlayerMark())){
-					break;
-				}
-				else {
-					compPos = this.getComputer().makeMove();
-				}
-			}
-			this.getGame().displayBoard();
-			if(this.getGame().gameOver()){
-				System.out.println("Sorry! The Computer won!");
-				this.getComputer().incrementScore();
-				break;
-			}
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
 
-			if(this.getGame().checkForTie()){
-				System.out.println("The Game resulted in a tie");
-			}
-		}
-	}
+
+            while(!this.getHuman().checkLegalInput(s)){
+                System.out.println("Please enter a number from 1-9");
+                try
+                {
+                    s = br.readLine();
+
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            // if we can't move to the field the user wants to we go
+            // to the next iteration of the loop
+            if (!this.getHuman().makeMove(this.getGame(), s)){
+                continue;
+            }
+
+            this.getGame().displayBoard();
+            // Check if this move resulted in a win
+            if(this.getGame().gameOver()){
+                System.out.println("Congratulations! You won the computer!");
+                this.getHuman().incrementScore();
+                break;
+            }
+            // Make the computer play
+
+            int compPos = this.getComputer().makeMove();
+            while(true){
+                if(this.getGame().mapInputToSquare(compPos,this.getComputer().getPlayerMark())){
+                    break;
+                }
+                else {
+                    compPos = this.getComputer().makeMove();
+                }
+            }
+            this.getGame().displayBoard();
+            if(this.getGame().gameOver()){
+                System.out.println("Sorry! The Computer won!");
+                this.getComputer().incrementScore();
+                break;
+            }
+
+            if(this.getGame().checkForTie()){
+                System.out.println("The Game resulted in a tie");
+            }
+        }
+    }
 
 	// A main function to run our game
 	public static void main(String[] args){

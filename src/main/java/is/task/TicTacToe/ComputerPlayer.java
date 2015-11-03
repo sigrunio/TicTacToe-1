@@ -5,7 +5,7 @@ import java.util.Random;
 public class ComputerPlayer extends Player{
 
     public ComputerPlayer(){
-        super(0,'O');
+        super(0,"O");
     }
 
 
