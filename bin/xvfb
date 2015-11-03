@@ -13,4 +13,3 @@ stop)
   killall Xvfb
 ;;
 esac
-
