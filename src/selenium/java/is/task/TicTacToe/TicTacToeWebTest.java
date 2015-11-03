@@ -10,10 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class TicTacToeWebTest {
-  private WebDriver driver;
-  private String baseUrl;
-  private boolean acceptNextAlert = true;
-  private StringBuffer verificationErrors = new StringBuffer();
+  static WebDriver driver;
+  static String baseUrl;
+  static boolean acceptNextAlert = true;
+  static StringBuffer verificationErrors = new StringBuffer();
 
   @Before
   public void setUp() throws Exception {
