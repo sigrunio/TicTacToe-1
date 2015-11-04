@@ -12,7 +12,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 
-mainClassName = "main.java.is.task.TicTacToe.TicTacToe"
+mainClassName = "is.task.TicTacToe.TicTacToeWeb"
 
 
 repositories {
@@ -48,7 +48,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes("Main-Class": "main.java.is.task.TicTacToe.TicTacToeWeb")
+        attributes("Main-Class": "is.task.TicTacToe.TicTacToeWeb")
     }
 }
 
