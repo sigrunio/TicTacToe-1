@@ -12,7 +12,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 
-mainClassName = "main.java.is.task.TicTacToe.TicTacToeWeb"
+mainClassName = "main.java.is.task.TicTacToe.TicTacToe"
 
 
 repositories {
