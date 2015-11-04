@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.is.task.TicTacToe.HumanPlayerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-11-02T17:23:42" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.007">
+<testsuite name="test.java.is.task.TicTacToe.HumanPlayerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-11-04T21:20:49" hostname="i-7f3b5dd9.csd07cloud.internal" time="0.014">
   <properties/>
-  <testcase name="testAcceptForLegalInput" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.003"/>
-  <testcase name="askMoveReturnType" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.001"/>
-  <testcase name="testZeroScoreAtStart" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.0"/>
+  <testcase name="testAcceptForLegalInput" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.005"/>
+  <testcase name="testZeroScoreAtStart" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.001"/>
   <testcase name="testAcceptNonIntInputSymbol" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.001"/>
   <testcase name="testPlayerMark" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.0"/>
   <testcase name="testAcceptNonIntegerInputString" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.0"/>
   <testcase name="testAcceptNIntInputOutOfRange" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.0"/>
-  <testcase name="testAcceptNonIntInputChar" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.001"/>
-  <system-out><![CDATA[Please enter a number from 1-9
-Please enter a NUMBER
+  <testcase name="testAcceptNonIntInputChar" classname="test.java.is.task.TicTacToe.HumanPlayerTest" time="0.0"/>
+  <system-out><![CDATA[Please enter a NUMBER
 Please enter a NUMBER
 The number you entered was not int the range 1-9
 Please enter a NUMBER
